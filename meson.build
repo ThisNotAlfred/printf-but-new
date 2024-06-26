@@ -9,11 +9,10 @@ project(
 
 sources = [
     'source/main.cpp',
-    'source/new_printf.cpp',
 ]
 
 includes = [
-    'include/new.hpp',
+    'include/new_printf.hpp',
 ]
 
 include_dirs = include_directories(
