@@ -3,7 +3,7 @@
 auto
 main() -> int
 {
-    modern::printf("{}, {} !", "hello", "world");
+    modern::printf("{}, {}!", "hello", "world");
 
     return 0;
 }
