@@ -17,7 +17,7 @@ main() -> int
 
     loop_start = std::chrono::high_resolution_clock::now();
     for (uint i = 0; i < 100000; ++i) {
-        printf("%s %s %u-%d\n", "hello", "world", 120000U, 12);
+        printf("%s, %s! %u-%d\n", "hello", "world", 120000U, 12);
     }
     loop_end   = std::chrono::high_resolution_clock::now();
     time       = loop_end - loop_start;
