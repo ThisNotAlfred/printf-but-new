@@ -2,8 +2,9 @@
 what if printf, but in modern C++?
 
 ## benchmark results
-```
-new printf took: 0.40697s s for 10000 iterations
-old printf took: 0.329062s s for 10000 iterations
-std23 print took: 0.405726s s for 10000 iterations
+```bash
+new printf took: 0.372077s for 10000 iterations
+old printf took: 0.34962s for 10000 iterations
+std23 print took: 0.360844s for 10000 iterations
+linux write syscall took: 0.336617s for 10000 iterations
 ```
