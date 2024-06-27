@@ -70,8 +70,6 @@ printf(const std::string& format, const Args&... args)
     std::string buffer = {};
     r_printf(buffer, format, args...);
 
-
-
     write(STDOUT_FILENO, buffer.data(), buffer.size());
 }
 } // namespace modern
