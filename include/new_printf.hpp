@@ -33,6 +33,8 @@ r_printf(std::string& buffer, const std::string& format, const Arg& arg, const A
 
     if constexpr (sizeof...(args) != 0) {
         r_printf(buffer, new_format, args...);
+    } else {
+        buffer.append(new_format.data(), new_format.size());
     }
 }
 
@@ -67,6 +69,8 @@ printf(const std::string& format, const Args&... args)
 
     std::string buffer = {};
     r_printf(buffer, format, args...);
+
+
 
     write(STDOUT_FILENO, buffer.data(), buffer.size());
 }
