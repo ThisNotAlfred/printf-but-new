@@ -13,7 +13,7 @@ main() -> int
     auto loop_end   = std::chrono::high_resolution_clock::now();
     auto time       = loop_end - loop_start;
 
-    auto delta_time_new_printf = time.count();
+    std::chrono::duration<float> delta_time_new_printf = time;
 
     loop_start = std::chrono::high_resolution_clock::now();
     for (uint i = 0; i < 100000; ++i) {
@@ -22,8 +22,7 @@ main() -> int
     loop_end   = std::chrono::high_resolution_clock::now();
     time       = loop_end - loop_start;
     
-    auto delta_time_old_printf = time.count();
-
+    std::chrono::duration<float> delta_time_old_printf = time;
 
     loop_start = std::chrono::high_resolution_clock::now();
     for (uint i = 0; i < 100000; ++i) {
@@ -32,11 +31,11 @@ main() -> int
     loop_end   = std::chrono::high_resolution_clock::now();
     time       = loop_end - loop_start;
     
-    auto delta_time_std23_print = time.count();
+    std::chrono::duration<float> delta_time_std23_print = time;
 
-    std::print("new printf took: {} ms for 10000 iterations\n", delta_time_new_printf);
-    std::print("old printf took: {} ms for 10000 iterations\n", delta_time_old_printf);
-    std::print("std23 print took: {} ms for 10000 iterations\n", delta_time_std23_print);
+    std::print("new printf took: {} s for 10000 iterations\n", delta_time_new_printf);
+    std::print("old printf took: {} s for 10000 iterations\n", delta_time_old_printf);
+    std::print("std23 print took: {} s for 10000 iterations\n", delta_time_std23_print);
 
     return 0;
 }
